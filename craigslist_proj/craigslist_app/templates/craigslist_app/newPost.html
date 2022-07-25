@@ -1,0 +1,18 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+
+<H1>Fill in request form to add a new Posts</H1>
+<h2>Add new Post</h2>
+
+<label>Title: </label>
+<input id="newTitle"></input>
+<br>
+<label>Price: </label>
+<input id="newPrice"></input>
+<br>
+<label>Description: </label>
+<input id="newDescription"></input>
+<br>
+<button onclick="{savePost()}">Submit</button>
+
+{% endblock %}

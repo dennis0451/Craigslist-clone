@@ -1,0 +1,23 @@
+[
+  {
+    "model": "craigslist_app.category",
+    "pk": 1,
+    "fields": {
+      "name": "For Sale"
+    }
+  },
+  {
+    "model": "craigslist_app.category",
+    "pk": 2,
+    "fields": {
+      "name": "Jobs"
+    }
+  },
+  {
+    "model": "craigslist_app.category",
+    "pk": 3,
+    "fields": {
+      "name": "Services"
+    }
+  }
+]

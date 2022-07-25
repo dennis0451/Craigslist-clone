@@ -1,0 +1,32 @@
+[
+  {
+    "model": "craigslist_app.post",
+    "pk": 1,
+    "fields": {
+      "title": "UPLIFT stand up desk for Sale",
+      "price": "$200",
+      "description": "Lightly used stand up desk, bought during the pandemic. Decided to become a digital nomad, no longer need this. My loss, your gain.",
+      "category": 1
+    }
+  },
+  {
+    "model": "craigslist_app.post",
+    "pk": 2,
+    "fields": {
+      "title": "Junior Full Stack Developer, hiring now",
+      "price": "80k plus benefits",
+      "description": "Looking to hire a full stack developer for a small startup in the DC metro area. Must be well versed in React/Python/Django.Must have 8 years of experience, and a Masters degree in S.T.E.M. ",
+      "category": 2
+    }
+  },
+  {
+    "model": "craigslist_app.post",
+    "pk": 3,
+    "fields": {
+      "title": "Personal Trainer Services available",
+      "price": "$45 per session. Plans available.",
+      "description": "Personal trainer with 5 years of documented experience looking to help you reach your fitness goals.",
+      "category": 3
+    }
+  }
+]

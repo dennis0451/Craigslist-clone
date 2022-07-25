@@ -1,0 +1,24 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+<br>
+<div style="font-size: 35px">Welcome to the <strong>{{category}}</strong> page</H1></div>
+<p>Click <a href="{% url 'new_post' category.id %}">here</a> to add post.</p>
+
+
+<div>
+    {% for item in post %}
+    <ol>
+        <li><p>{{item.title}}</p>
+            <p> <strong>Price:</strong> {{item.price}}</p>
+            <p> <strong>Description:</strong> {{item.description}}</p>
+            <p>Contact seller <a href="https://www.gmail.com">here</a>.</p>
+        </li>
+    </ol>
+    {% endfor %}
+    
+
+</div>
+
+    
+
+{% endblock %}

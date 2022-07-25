@@ -1,0 +1,23 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+<br>
+<div style="font-size: 35px">Current Posts</div>
+
+
+<ol>
+    {% for post in all_posts %}
+    <li>
+        
+        <a href="{% url 'view_post' post.id  %}">{{post.title}}</a>
+        <p>Price:{{post.price}}</p>
+        <p>Description: {{post.description}}</p>
+        <p>Category: {{post.category}}</a></p>
+        {%endfor%}
+    </li>
+        
+</ol>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+
+<h2>List of Current Categories</h2>
+
+<ol>
+    {% for category in all_categories %}
+    <li>
+        <a href="{% url 'view_category' category.id %}">{{category}}</a>
+        {% endfor %}
+    </li>
+</ol>
+
+<marquee behavior="alternate" scrollamount=17 direction=""><a href="categories/error"> <button>don't click me</button> </a></marquee>
+
+
+{% endblock %}
