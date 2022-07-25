@@ -16,3 +16,23 @@ function savePost(){
     })
     console.log('third')
 }
+
+function editPost(){
+    title = document.getElementById("newTitle").value
+    price = document.getElementById("newPrice").value
+    description = document.getElementById("newDescription").value
+    axios.put("", {title : title, price : price, description : description }).then((response) => {
+        window.location.href = "../../../../"
+    })
+    console.log('third')
+}
+
+function deletePost(){
+    // title = document.getElementById("newTitle").value
+    // price = document.getElementById("newPrice").value
+    // description = document.getElementById("newDescription").value
+    // axios.delete("", {title : title, price : price, description : description }).then((response) => {
+    //     window.location.href = "../../../../"
+    // })
+    console.log('Deleted')
+}

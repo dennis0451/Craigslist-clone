@@ -66,14 +66,24 @@ def all_posts(request):
 
 
 @csrf_exempt
-def view_post(request, post_id):
+def view_post(request,category_id, post_id):
     post = Post.objects.all().filter(id=post_id)
-    # category_name = Category.objects.all().get(id=post_id)
+    category= Category.objects.all().get(id=category_id)
     print(post)
-    # print(category_name)
-    data = {"post": post}
+    print(category)
+    data = {"post": post, "category":category}
 
     return render(request, 'craigslist_app/viewPost.html', data)
+
+@csrf_exempt
+def single_post(request,post_id):
+    post = Post.objects.all().get(id=post_id)
+    # category= Category.objects.all().get(id=category_id)
+    print(post)
+    # print(category)
+    data = {"post": post}
+
+    return render(request, 'craigslist_app/deletePost.html', data)
 
 
 @csrf_exempt
@@ -92,20 +102,19 @@ def create_post(request, category_id):
 @csrf_exempt
 def edit_post(request, category_id, post_id):
     category = Category.objects.all().get(id=category_id)
-    # category =  current_category
     post = Post.objects.all().get(id= post_id)
     # data
-    # print(category)
-    # print(current_post)
-    if request.method == 'POST':
+    print(category)
+    print(post)
+    data = {'post': post, 'category': category}    
+    if request.method == 'PUT':
         body = json.loads(request.body)
-        post = Post.object.all().get(id = post_id)
+        post = Post.objects.all().get(id = post_id)
         post.title = body['title']
         post.price = body['price']
         post.description = body['description']
         post.save()
         return JsonResponse({})
-    data = {'post': post, 'category': category}    
 
     return render(request, 'craigslist_app/editPost.html', data)
 

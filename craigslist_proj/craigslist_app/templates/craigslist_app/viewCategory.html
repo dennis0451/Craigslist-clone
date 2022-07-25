@@ -6,15 +6,17 @@
 
 
 <div>
-    {% for item in post %}
+    {{category.id}}
     <ol>
-        <li><p>{{item.title}}</p>
+        {% for item in post %}
+        <li>
+            <p><a href="{% url 'view_post' category.id item.id %}">{{item.title}}</a></p>
             <p> <strong>Price:</strong> {{item.price}}</p>
             <p> <strong>Description:</strong> {{item.description}}</p>
             <p>Contact seller <a href="https://www.gmail.com">here</a>.</p>
         </li>
+        {% endfor %}
     </ol>
-    {% endfor %}
     
 
 </div>

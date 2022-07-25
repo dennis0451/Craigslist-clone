@@ -1,0 +1,22 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+
+<H1>Post Information</H1>
+<p>
+
+    {{post}}
+    {{category}}
+</p>
+
+<label>Title: </label>
+<input type="hidden" id="newTitle" value="">{{post.title}}</input>
+<br>
+<label>Price: </label>
+<input type="hidden" id="newPrice">{{post.price}}</input>
+<br>
+<label>Description: </label>
+<input type="hidden" id="newDescription" style="width: 50%;">{{post.description}}</input>
+<br>
+<button onclick="deletePost()">Click to Delete</button>
+
+{% endblock %}

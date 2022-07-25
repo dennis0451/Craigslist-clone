@@ -7,13 +7,17 @@
 
 <h1 style="margin: 2%;">{{item.title}}</h1>
 <hr>
-
+{{post}}
+{{category}}
 
 <div style="margin: 2%;">
     <p> <strong>Price:</strong> {{item.price}}</p>
     <p> <strong>Description:</strong> {{item.description}}</p>
 <br>
-<a href="#">Edit Post</a>
+<p>Click <a href="{% url 'edit_post' category.id item.id %}">here</a> to <strong>edit</strong> post</p>
+<br>
+<p>Click <a href="{% url 'single_post' item.id %}">here</a> to <strong>delete</strong> post</p>
+
 
 
 </div>

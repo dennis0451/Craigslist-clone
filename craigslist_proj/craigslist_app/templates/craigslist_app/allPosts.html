@@ -8,7 +8,7 @@
     {% for post in all_posts %}
     <li>
         
-        <a href="{% url 'view_post' post.id  %}">{{post.title}}</a>
+        <a href="{% url 'single_post' post.id %}">{{post.title}}</a>
         <p>Price:{{post.price}}</p>
         <p>Description: {{post.description}}</p>
         <p>Category: {{post.category}}</a></p>
