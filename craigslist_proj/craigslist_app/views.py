@@ -1,4 +1,4 @@
-from unicodedata import category
+from unicodedata import category, name
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from . import views
@@ -41,16 +41,32 @@ def create_category(request):
     return render(request, 'craigslist_app/newCategory.html', {'all_categories': all_categories})
 
 @csrf_exempt
-def edit_category(request):
-    all_categories = Category.objects.all()
+def edit_category(request, category_id):
+
+    category = Category.objects.all().get(id=category_id)
+
+    if request.method == 'PUT':
+        body = json.loads(request.body)
+        print(body)
+        post = Category.objects.all().get(id = category_id)
+        post.name = body['name']
+        post.save()
+
+    return render(request, 'craigslist_app/editCategory.html', {'category':category})
+
+
+@csrf_exempt
+def delete_category(request, category_id):
+    category = Category.objects.all().get(id=category_id)
 
     if request.method == 'POST':
         body = json.loads(request.body)
-        newCategory = Category(name = body['category'])
-        newCategory.save()
-        HttpResponse({})
+        category_to_delete = Category.objects.all().filter(id=(body['category_id']))
+        print(category_to_delete)
+        category_to_delete.delete()
+        return HttpResponse({})
 
-    return render(request, 'craigslist_app/newCategory.html', {'all_categories': all_categories})
+    return render(request, 'craigslist_app/deleteCategory.html', {'category': category})
 
 
 

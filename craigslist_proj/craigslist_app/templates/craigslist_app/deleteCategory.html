@@ -1,0 +1,14 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+
+<H1>Category Information</H1>
+<hr>
+<h3>Please confirm information before deleting.</h3>
+
+<label> <strong>Category:</strong> </label>
+<input type="hidden" id="delete_cat" value="{{category.id}}">{{category.name}}</input>
+<br>
+<br>
+<button onclick="deleteCategory()">Click to Delete</button>
+
+{% endblock %}

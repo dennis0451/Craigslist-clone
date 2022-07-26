@@ -1,0 +1,13 @@
+{% extends 'craigslist_app/index.html' %}
+{% block content%}
+
+<H1>Fill in request form to edit current Category</H1>
+<p>
+
+</p>
+
+<label><strong>Name: </strong> </label>
+<input id="newName" value="{{category.name}}" style="width: 10%;"></input>
+<button onclick="editCategory()">Submit</button>
+
+{% endblock %}

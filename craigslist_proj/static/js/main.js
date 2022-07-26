@@ -14,7 +14,7 @@ function savePost(){
     axios.post("", {title : title, price : price, description : description }).then((response) => {
         window.location.href = "../../../"
     })
-    console.log('third')
+
 }
 
 function editPost(){
@@ -24,7 +24,7 @@ function editPost(){
     axios.put("", {title : title, price : price, description : description }).then((response) => {
         window.location.href = "../../../../"
     })
-    console.log('third')
+
 }
 
 function deletePost(){
@@ -34,5 +34,22 @@ function deletePost(){
         window.location.href = "../../"
     })
     console.log(post_id)
+
+}
+function deleteCategory(category_id){
+    category_id = document.getElementById("delete_cat").value;
+    axios.post("", {category_id:category_id }).then((response) => {
+        window.location.href = "../../"
+    })
+
+    console.log('Deleted')
+}
+function editCategory(){
+    name = document.getElementById("newName").value
+    console.log(name)
+    axios.put("", {name:name }).then((response) => {
+        window.location.href = "../../"
+    })
+
     console.log('Deleted')
 }
