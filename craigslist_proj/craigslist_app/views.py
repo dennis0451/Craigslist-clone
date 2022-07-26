@@ -72,7 +72,6 @@ def delete_category(request, category_id):
 
 def all_posts(request):
     all_posts = Post.objects.all()
-    print('made it bruv')
     return render(request, 'craigslist_app/allPosts.html', {'all_posts':all_posts})
 
 
