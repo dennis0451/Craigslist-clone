@@ -2,20 +2,18 @@
 {% block content%}
 
 <H1>Post Information</H1>
-<p>
-
-    {{post}}
-    {{category}}
-</p>
-
-<label>Title: </label>
-<input type="hidden" id="newTitle" value="">{{post.title}}</input>
+<hr>
+<h3>Please confirm information before deleting.</h3>
 <br>
-<label>Price: </label>
-<input type="hidden" id="newPrice">{{post.price}}</input>
+
+<label> <strong>Title:</strong> </label>
+<input type="hidden" id="newTitle" value="{{post.id}}">{{post.title}}</input>
 <br>
-<label>Description: </label>
-<input type="hidden" id="newDescription" style="width: 50%;">{{post.description}}</input>
+<label> <strong>Price:</strong> </label>
+<input type="hidden" id="newPrice" >{{post.price}}</input>
+<br>
+<label> <strong>Description:</strong></label>
+<input type="hidden" id="newDescription" >{{post.description}}</input>
 <br>
 <button onclick="deletePost()">Click to Delete</button>
 

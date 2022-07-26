@@ -52,12 +52,7 @@ def edit_category(request):
 
     return render(request, 'craigslist_app/newCategory.html', {'all_categories': all_categories})
 
-# @csrf_exempt
-# def list_category(request, category_id):
-#     print('here bruv')
-#     return render(request, 'craigslist_app/categories.html')
-# # def list_posts(request):
-# #     all_posts = Post.objects.all()
+
 
 def all_posts(request):
     all_posts = Post.objects.all()
@@ -79,7 +74,14 @@ def view_post(request,category_id, post_id):
 def single_post(request,post_id):
     post = Post.objects.all().get(id=post_id)
     # category= Category.objects.all().get(id=category_id)
-    print(post)
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        post_to_delete = Post.objects.all().filter(id=(body['post_id']))
+
+        post_to_delete.delete()
+        print(body['post_id'])
+        return JsonResponse({})
+
     # print(category)
     data = {"post": post}
 

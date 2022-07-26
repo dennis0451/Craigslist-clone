@@ -2,11 +2,10 @@
 {% block content%}
 <br>
 <div style="font-size: 35px">Welcome to the <strong>{{category}}</strong> page</H1></div>
-<p>Click <a href="{% url 'new_post' category.id %}">here</a> to add post.</p>
+<p>Click <a href="{% url 'new_post' category.id %}">here</a> to add a post.</p>
 
 
 <div>
-    {{category.id}}
     <ol>
         {% for item in post %}
         <li>

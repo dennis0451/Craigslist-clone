@@ -28,11 +28,11 @@ function editPost(){
 }
 
 function deletePost(){
-    // title = document.getElementById("newTitle").value
-    // price = document.getElementById("newPrice").value
-    // description = document.getElementById("newDescription").value
-    // axios.delete("", {title : title, price : price, description : description }).then((response) => {
-    //     window.location.href = "../../../../"
-    // })
+    
+    post_id = document.getElementById("newTitle").value
+    axios.post("", {post_id:post_id }).then((response) => {
+        window.location.href = "../../"
+    })
+    console.log(post_id)
     console.log('Deleted')
 }

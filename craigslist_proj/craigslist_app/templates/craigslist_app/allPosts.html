@@ -9,9 +9,9 @@
     <li>
         
         <a href="{% url 'single_post' post.id %}">{{post.title}}</a>
-        <p>Price:{{post.price}}</p>
-        <p>Description: {{post.description}}</p>
-        <p>Category: {{post.category}}</a></p>
+        <p> <strong>Price:</strong> {{post.price}}</p>
+        <p> <strong>Description:</strong> {{post.description}}</p>
+        <p> <strong>Category:</strong> {{post.category}}</a></p>
         {%endfor%}
     </li>
         
