@@ -1,0 +1,2 @@
+start server with ' python manage.py runserver --insecure "
+since DEBUG mode is off and i have a custon 404
